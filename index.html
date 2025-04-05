@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Planner</h1>
+            <div class="date-display">
+                <span id="current-day"></span>, 
+                <span id="current-date"></span>
+            </div>
+        </header>
+
+        <div class="planner-controls">
+            <button id="add-task-btn" class="btn">
+                <i class="fas fa-plus"></i> Add Task
+            </button>
+            <div class="time-filter">
+                <label for="time-filter">Filter by:</label>
+                <select id="time-filter">
+                    <option value="all">All Times</option>
+                    <option value="morning">Morning (6AM-12PM)</option>
+                    <option value="afternoon">Afternoon (12PM-6PM)</option>
+                    <option value="evening">Evening (6PM-12AM)</option>
+                    <option value="night">Night (12AM-6AM)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="task-modal" id="task-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-title">Add New Task</h2>
+                <form id="task-form">
+                    <input type="hidden" id="task-id">
+                    <div class="form-group">
+                        <label for="task-title">Task Title</label>
+                        <input type="text" id="task-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-time">Time</label>
+                        <input type="time" id="task-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Description</label>
+                        <textarea id="task-description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Save Task</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="time-slots" id="time-slots">
+           
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
